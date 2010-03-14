@@ -33,7 +33,10 @@ struct json_object
     int c_int;
     struct lh_table *c_object;
     struct array_list *c_array;
-    char *c_string;
+    struct {
+        char *str;
+        int len;
+    } c_string;
   } o;
 };
 
