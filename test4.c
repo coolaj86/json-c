@@ -4,8 +4,7 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <json/json_object.h>
-#include <json/json_tokener.h>
+#include "json.h"
 
 void print_hex( const unsigned char* s) {
         const unsigned char *iter = s;
@@ -35,9 +34,9 @@ int main() {
     } else {
         printf("JSON parse result doesn't match expected string\n");
         printf("expected string bytes: ");
-        print_hex( expected);
+        print_hex((const unsigned char *) expected);
         printf("parsed string bytes:   ");
-        print_hex( unjson);
+        print_hex((const unsigned char *) unjson);
         printf("FAIL\n");
         return(1);
     }
