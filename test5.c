@@ -7,9 +7,9 @@
 #include "json.h"
 
 int main() {
-    const char *input = " \0 ";
-    const char *expected = "\" \\u0000 \"";
-    struct json_object *string = json_object_new_string_len(input, 3);
+    const char *input = " \0\xff ";
+    const char *expected = "\" \\u0000\\u00ff \"";
+    struct json_object *string = json_object_new_string_len(input, 4);
     const char *json = json_object_to_json_string(string);
 
     int strings_match =  !strcmp( expected, json);
