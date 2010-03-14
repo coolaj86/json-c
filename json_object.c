@@ -107,7 +107,7 @@ static int json_escape_str(struct printbuf *pb, char *str, int len)
       start_offset = ++pos;
       break;
     default:
-      if(c < ' ') {
+      if(c < 0x20 || c > 0x7F) {
 	if(pos - start_offset > 0)
 	  printbuf_memappend(pb, str + start_offset, pos - start_offset);
 	sprintbuf(pb, "\\u00%c%c",
