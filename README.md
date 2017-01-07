@@ -1,16 +1,2 @@
-Installation on Ubuntu
-====
-
-    apt-get install libtool git-core
-    git clone http://github.com/admp/json-c.git
-    cd json-c/src
-    sh autogen.sh
-    ./configure
-    make
-    sudo make install
-    sudo ldconfig
-
-Installation on OpenEmbedded
-====
-
-    bitbake json-c
+# Moved
+### [json-c](https://git.daplie.com/coolaj86/json-c) is now at [git.daplie.com/coolaj86/json-c](https://git.daplie.com/coolaj86/json-c)
